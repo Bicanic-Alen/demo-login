@@ -8,7 +8,7 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
   loginUtente(email: string, pws : string) {
-    const url = `https://3000-gold-horse-htjbec9d.ws-eu03.gitpod.io/users/user/${email}/${pws}`;
+    const url = `https://3000-purple-marmot-mpjpjgg0.ws-eu03.gitpod.io/users/${email}/${pws}`;
     return this.http.get(url);
   }
 }

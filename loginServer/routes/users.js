@@ -6,19 +6,19 @@ const MongoClient = require('mongodb').MongoClient;
 const uri = 'mongodb+srv://alen_bicanic:KPgZbP7MWt061Quk@cluster1.8ojbw.mongodb.net/Cluster1?retryWrites=true&w=majority'
 
 /* GET users listing. */
-router.get('user/:email/:pass', function (req, res, next) {
+router.get('/:mail/:pass', function (req, res, next) {
     console.log(req.params); //Leggo i parametri passati all'url
-    e = req.params.email;
+    e = req.params.mail;
     p = req.params.pass;
 
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
-    client.connect(foundTitle);
+    client.connect(foundUser);
         
-        function foundTitle(err){
+        function foundUser(err){
             if (err) console.log("connesione al db non riuscita");
             else{
                 const collection = client.db("leartravel").collection("utente");
-                collection.find({$and:[{'email':`${e}`},{"pasword":`${p}`}]}).toArray(callBackQuery);
+                collection.find({$and:[{'email':e},{"pasword":p}]}).toArray(callBackQuery);
             }
 
         }  

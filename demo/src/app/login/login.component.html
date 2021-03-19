@@ -1,4 +1,5 @@
-<form>
+<div *ngIf  = "!isAuthorized">
+<div class = "border">
   <div class="container">
     <label for="uname"><b>Username</b></label>
     <input type="text" placeholder="Enter email" name="uname" required  #email>
@@ -10,5 +11,23 @@
     <button type="button" class="signinbtn">Sign In</button>
     <span class="psw">Forgot <a href="#">password?</a></span>
   </div>
-</form>
-<p>{{results|json}}</p>
+</div>
+</div>
+<div *ngIf = "isAuthorized">
+  <button type="button" class="signinbtn" (click)="logout()">Log out</button>
+  <hr>
+  <div>
+  <p><b>Informazioni account:</b></p>
+  <p><b>nome utente:</b> <span>{{results.nome}}</span></p>
+  <p><b>cognome utente: </b>{{results.cognome}}</p>
+  <div *ngIf = "results.premium == 'y'">
+    <p><b>tipo abbonamento:</b> premium ★</p>
+  </div>
+  <div *ngIf = "results.premium != 'y'">
+    <p><b>tipo abbonamento:</b> base</p>
+  </div>
+  </div>
+  <hr>
+</div>
+
+
