@@ -1,16 +1,19 @@
 <div>
+    <label for="name"><b>nome</b></label>
+    <input type="text" placeholder="inserisci nome" name="uname" required  #nome>
+
+    <label for="surname"><b>cognome</b></label>
+    <input type="text" placeholder="inserisci cognome" name="surname" required #cognome>
+
     <label for="uname"><b>email</b></label>
     <input type="text" placeholder="inserisci l'email" name="uname" required  #email>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="inserisci password" name="psw" required #pass>
 
-    <label for="uname"><b>nome</b></label>
-    <input type="text" placeholder="inserisci nome" name="uname" required  #nome>
 
-    <label for="uname"><b>cognome</b></label>
-    <input type="password" placeholder="inserisci cognome" name="psw" required #cognome>
 
     <button class="signinbtn">Registrati</button>
+    <button class="cancelbtn" routerLink="/login" routerLinkActive="active">Cancel</button>
 
 </div>

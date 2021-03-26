@@ -1,4 +1,9 @@
+<div *ngIf = "!results">
+  <p>Benvenuti su questo sito!!</p>
+</div>
+<div *ngIf = "results">
+<p>Benvenuto {{results.nome}} {{results.cognome}}</p>
+</div>
 
-<p>welcome to this site!! <span>{{results.nome}}</span></p>
 <img src = "https://www.tondisport.it/wp-content/uploads/2017/09/work-in-progress-ebike-2018.png">
 

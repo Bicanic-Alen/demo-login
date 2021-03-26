@@ -14,7 +14,7 @@
 </div>
 </div>
 <div *ngIf = "isAuthorized">
-  <button type="button" class="signinbtn" (click)="logout()">Log out</button>
+  <button type="button" class="signinbtn" (click)="logout()" routerLink="/home" routerLinkActive="active">Log out</button>
   <hr>
   <div>
   <p><b>Informazioni account:</b></p>
