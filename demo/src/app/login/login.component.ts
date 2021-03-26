@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   isAuthorized: boolean;
 
 
-  constructor(public auth : AuthService, private router: Router) {
+  constructor(private auth : AuthService, private router: Router, private user : UserService) {
    }
 
   submit(email :HTMLInputElement, pass : HTMLInputElement){
@@ -24,20 +25,19 @@ export class LoginComponent implements OnInit {
     this.pass = pass.value;
     this.obsLogin = this.auth.loginUtente(this.email, this.pass);
     this.obsLogin.subscribe(this.getData);
-
-
-    if (this.results != undefined)
-    {
-      this.isAuthorized = true;
-    }
   }
 
   getData = (data)=>{
     this.results = data[0];
-    console.log(this.results);
+    this.user.newUser(this.results);
   }
 
   ngOnInit(): void {
+    this.user.shareduserInfo.subscribe(message => this.results = message)
+    if (this.results != undefined)
+    {
+      this.isAuthorized = true;
+    }
 
   }
 
@@ -47,6 +47,7 @@ export class LoginComponent implements OnInit {
   logout()
   {
     this.results = undefined;
+    this.user.newUser(undefined);
     this.isAuthorized = false;
   }
 
