@@ -30,6 +30,7 @@ export class LoginComponent implements OnInit {
   getData = (data)=>{
     this.results = data[0];
     this.user.newUser(this.results);
+    console.log(this.results)
   }
 
   ngOnInit(): void {
