@@ -20,10 +20,10 @@
   <p><b>Informazioni account:</b></p>
   <p><b>nome utente:</b> <span>{{results.nome}}</span></p>
   <p><b>cognome utente: </b>{{results.cognome}}</p>
-  <div *ngIf = "results.premium == 'y'">
+  <div *ngIf = "results.premium == True">
     <p><b>tipo abbonamento:</b> premium ★</p>
   </div>
-  <div *ngIf = "results.premium != 'y'">
+  <div *ngIf = "results.premium == False">
     <p><b>tipo abbonamento:</b> base</p>
   </div>
   <button type="button" class="signinbtn" routerLink="/home" routerLinkActive="active">Go to home page</button>

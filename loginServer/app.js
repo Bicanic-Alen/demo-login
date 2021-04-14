@@ -6,7 +6,7 @@ var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-var signInRouter = require('./routes/signin');
+var signUpRouter = require('./routes/signin');
 
 var app = express();
 
@@ -19,6 +19,6 @@ app.use(cors())
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/signin', signInRouter);
+app.use('/signup', signUpRouter);
 
 module.exports = app;

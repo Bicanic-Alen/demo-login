@@ -1,4 +1,4 @@
-<div>
+<div *ngIf = "operazione == undefined">
     <label for="name"><b>nome</b></label>
     <input type="text" placeholder="inserisci nome" name="uname" required  #nome>
 
@@ -6,14 +6,18 @@
     <input type="text" placeholder="inserisci cognome" name="surname" required #cognome>
 
     <label for="uname"><b>email</b></label>
-    <input type="text" placeholder="inserisci l'email" name="uname" required  #email>
+    <input type="email" placeholder="inserisci l'email" name="uname" required  #email>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="inserisci password" name="psw" required #pass>
 
 
 
-    <button class="signinbtn">Registrati</button>
+    <button class="signinbtn" (click) = "submit(nome, cognome, email, pass)">Registrati</button>
     <button class="cancelbtn" routerLink="/login" routerLinkActive="active">Cancel</button>
 
+</div>
+<div *ngIf = "operazione != undefined">
+  <p>{{operazione}</p>
+  <button class="signinbtn" routerLink="/login" routerLinkActive="active">Go to login</button>
 </div>

@@ -7,8 +7,12 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 export class AuthService {
 
   constructor(private http: HttpClient) { }
-  loginUtente(email: string, pws : string) {
-    const url = `https://3000-tomato-octopus-loj54vr9.ws-eu03.gitpod.io/users/${email}/${pws}`;
+  loginUtente(email: string, psw : string) {
+    const url = `https://3000-fuchsia-koi-hylhzpjc.ws-eu03.gitpod.io/users/${email}/${psw}`;
     return this.http.get(url);
+  }
+
+  signup(nome: string, cognome :string, email: string, psw: string){
+    const url = `https://3000-fuchsia-koi-hylhzpjc.ws-eu03.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`
   }
 }
