@@ -77,8 +77,8 @@ router.get("/:nome/:cognome/:mail/:pass", function (req, res){
           var mailOptions = {
             from: 'learnandtravelservice@gmail.com',
             to: email,
-            subject: 'Sending Email using Node.js',
-            text: 'registrazione effetuata con successo'
+            subject: 'Registrazione a Learn&Traver',
+            html: `<p>Alen Bicanic da Learn&Travel</p> <p>Gentile cliente ${nome} ${cognome},</p> <p>la informiamo che la sua registrazione è stata effetuata con successo.</p> <p>Da questo momento è possibile accedere al sito https://4200-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/login</p>`
             };
 
             transporter.sendMail(mailOptions, function(error, info){

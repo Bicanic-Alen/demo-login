@@ -8,12 +8,12 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
   loginUtente(email: string, psw : string) {
-    const url = `https://3000-emerald-spider-qpb42vqc.ws-eu03.gitpod.io/users/${email}/${psw}`;
+    const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/users/${email}/${psw}`;
     return this.http.get(url);
   }
 
   signup(nome: string, cognome :string, email: string, psw: string){
-    const url = `https://3000-emerald-spider-qpb42vqc.ws-eu03.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`;
+    const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`;
     return this.http.get(url);
   }
 }
