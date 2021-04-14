@@ -2,14 +2,14 @@
 <div class = "border">
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter email" name="uname" required  #email>
+    <input type="email" placeholder="Enter email" name="uname" required  #email>
 
     <label for="psw"><b>Password</b></label>
     <input type="password" placeholder="Enter Password" name="psw" required #pass>
 
     <button type="submit" (click)="submit(email, pass)" routerLink="/home" routerLinkActive="active">Login</button>
-    <button type="button" class="signinbtn" routerLink="/signin" routerLinkActive="active">Sign In</button>
-    <span class="psw">Forgot <a href="#">password?</a></span>
+    <button type="button" class="signinbtn" routerLink="/signup" routerLinkActive="active">Sign Up</button>
+    <span class="psw">Forgot <a routerLink="/forgotPassword" routerLinkActive="active">password?</a></span>
   </div>
 </div>
 </div>
@@ -20,10 +20,10 @@
   <p><b>Informazioni account:</b></p>
   <p><b>nome utente:</b> <span>{{results.nome}}</span></p>
   <p><b>cognome utente: </b>{{results.cognome}}</p>
-  <div *ngIf = "results.premium == True">
+  <div *ngIf = "results.premium == true">
     <p><b>tipo abbonamento:</b> premium ★</p>
   </div>
-  <div *ngIf = "results.premium == False">
+  <div *ngIf = "results.premium == false">
     <p><b>tipo abbonamento:</b> base</p>
   </div>
   <button type="button" class="signinbtn" routerLink="/home" routerLinkActive="active">Go to home page</button>

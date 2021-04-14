@@ -18,7 +18,7 @@ router.get('/:mail/:pass', function (req, res, next) {
             if (err) console.log("connesione al db non riuscita");
             else{
                 const collection = client.db("leartravel").collection("utente");
-                collection.find({$and:[{'email':e},{"pasword":p}]}).toArray(callBackQuery);
+                collection.find({$and:[{'email':e},{"password":p}]}).toArray(callBackQuery);
             }
 
         }  
@@ -28,5 +28,7 @@ router.get('/:mail/:pass', function (req, res, next) {
             client.close();
         }
 }); 
+
+
 
 module.exports = router;

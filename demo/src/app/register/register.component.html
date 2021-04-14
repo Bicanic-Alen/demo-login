@@ -1,4 +1,5 @@
-<div *ngIf = "!operazione">
+<div class = "border">
+  <div class ="container">
     <label for="name"><b>nome</b></label>
     <input type="text" placeholder="inserisci nome" name="uname" required  #nome>
 
@@ -15,9 +16,6 @@
 
     <button class="signinbtn" (click) = "submit(nome, cognome, email, pass)" routerLink="/login" routerLinkActive="active">Registrati</button>
     <button class="cancelbtn" routerLink="/login" routerLinkActive="active">Cancel</button>
+  </div>
+</div>
 
-</div>
-<div *ngIf = "operazione">
-  <p>{{operazione}</p>
-  <button class="signinbtn" routerLink="/login" routerLinkActive="active">Go to login</button>
-</div>
