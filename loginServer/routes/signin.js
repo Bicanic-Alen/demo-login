@@ -1,5 +1,16 @@
 var express = require('express');
 var router = express.Router();
+var nodemailer = require('nodemailer');
+
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: 'learnandtravelservice@gmail.com',
+    pass: 'xxx123##'
+  }
+});
+
+
 
 const MongoClient = require('mongodb').MongoClient;
 
@@ -47,7 +58,7 @@ router.get("/:nome/:cognome/:mail/:pass", function (req, res){
             this.result = results;
           if (result.length === 0)
           {
-            var myobj = { "id" : 4, "nome" : nome, "cognome" : cognome, "email": email, "pasword": psw, "premium" : "False" };
+            var myobj = { "id" : 4, "nome" : nome, "cognome" : cognome, "email": email, "pasword": psw, "premium" : false };
             dbo.collection("utente").insertOne(myobj, function(err, res) {
             if (err) throw err;
             this.result = results;
@@ -62,6 +73,22 @@ router.get("/:nome/:cognome/:mail/:pass", function (req, res){
             result = reg;
             res.send(result);
           }
+
+          var mailOptions = {
+            from: 'learnandtravelservice@gmail.com',
+            to: email,
+            subject: 'Sending Email using Node.js',
+            text: 'registrazione effetuata con successo'
+            };
+
+            transporter.sendMail(mailOptions, function(error, info){
+            if (error) {
+                console.log(error);
+            } else {
+                console.log('Email sent: ' + info.response);
+            }
+            });
+
         db.close();
         });
     });

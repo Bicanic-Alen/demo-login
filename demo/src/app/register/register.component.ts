@@ -24,15 +24,15 @@ export class RegisterComponent implements OnInit {
   submit(nome: HTMLInputElement, cognome: HTMLInputElement, email :HTMLInputElement, pass : HTMLInputElement){
     this.email = email.value;
     this.pass = pass.value;
-    this.obsReg = this.auth.loginUtente(this.email, this.pass);
+    this.nome = nome.value;
+    this.cognome = cognome.value;
+    this.obsReg = this.auth.signup(this.nome, this.cognome,this.email, this.pass);
     this.obsReg.subscribe(this.getData);
   }
 
   getData = (data)=>{
     this.results = data[0];
-    if (this.results == true ){
-      this.operazione = "registrazione avvenuta con successo";
-    }
+    console.log(this.results);
   }
 
   ngOnInit(): void {
