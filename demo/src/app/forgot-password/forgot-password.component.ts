@@ -23,7 +23,6 @@ export class ForgotPasswordComponent implements OnInit {
       this.t.push(pop.charAt(Math.floor(Math.random() * pop.length)));
     }
     this.cod = this.t.join('');
-    console.log(this.cod)
     this.obsForgot = this.auth.forgotPsw(this.email, this.cod);
     this.obsForgot.subscribe(this.getData);
   }

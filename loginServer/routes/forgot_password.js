@@ -14,11 +14,13 @@ const MongoClient = require('mongodb').MongoClient;
 
 const uri = 'mongodb+srv://alen_bicanic:KPgZbP7MWt061Quk@cluster1.8ojbw.mongodb.net/Cluster1?retryWrites=true&w=majority'
 
- 
+var codiceSicurezza;
 
-router.get('/:mail', function (req, res, next) {
+router.get('/:mail/:cod', function (req, res, next) {
     console.log(req.params); //Leggo i parametri passati all'url
     email = req.params.mail;
+    cod = req.params.cod;
+    codiceSicurezza = cod;
 
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     client.connect(recoverpass);
