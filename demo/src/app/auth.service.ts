@@ -16,8 +16,8 @@ export class AuthService {
     const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`;
     return this.http.get(url);
   }
-  forgotPsw( email: string){
-    const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/forgotPassword/${email}`;
+  forgotPsw( email: string, cod : string){
+    const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/forgotPassword/${email}/${cod}`;
     return this.http.get(url);
   }
 }

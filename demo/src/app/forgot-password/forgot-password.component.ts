@@ -9,14 +9,22 @@ import { Observable } from 'rxjs';
 })
 export class ForgotPasswordComponent implements OnInit {
   email : string;
+  t : string[] = [];
+  cod :string;
   results :any;
   obsForgot : Observable<object>;
 
   constructor(private auth : AuthService) { }
   submit(email :HTMLInputElement){
     this.email = email.value;
+    var pop = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
-    this.obsForgot = this.auth.forgotPsw(this.email);
+    for (var i=0; i<5; i++){
+      this.t.push(pop.charAt(Math.floor(Math.random() * pop.length)));
+    }
+    this.cod = this.t.join('');
+    console.log(this.cod)
+    this.obsForgot = this.auth.forgotPsw(this.email, this.cod);
     this.obsForgot.subscribe(this.getData);
   }
 
