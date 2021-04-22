@@ -28,11 +28,9 @@ ul.sidenav li a:hover:not(.active) {
 }
 
 div.content {
-  margin-left: auto;
-  margin-top: auto;
-  margin-bottom: auto;
+  margin-left: 25%;
   padding: 1px 16px;
-  height: auto;
+  height: 100%;
 }
 
 @media screen and (max-width: 900px) {
