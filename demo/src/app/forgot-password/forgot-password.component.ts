@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { Observable } from 'rxjs';
+import { RecoverpassService } from '../recoverpass.service';
 
 @Component({
   selector: 'app-forgot-password',
@@ -14,7 +15,7 @@ export class ForgotPasswordComponent implements OnInit {
   results :any;
   obsForgot : Observable<object>;
 
-  constructor(private auth : AuthService) { }
+  constructor(private auth : AuthService, private recover : RecoverpassService) { }
   submit(email :HTMLInputElement){
     this.email = email.value;
     var pop = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -23,8 +24,10 @@ export class ForgotPasswordComponent implements OnInit {
       this.t.push(pop.charAt(Math.floor(Math.random() * pop.length)));
     }
     this.cod = this.t.join('');
+    console.log(this.cod);
     this.obsForgot = this.auth.forgotPsw(this.email, this.cod);
     this.obsForgot.subscribe(this.getData);
+    this.recover.newEmail(this.email);
   }
 
   getData = (data)=>{

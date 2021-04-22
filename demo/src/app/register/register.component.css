@@ -4,8 +4,8 @@
   width:500px;
   height: 400px;
   position:absolute;
-  top:50%;
-  left:50%;
+  top:35%;
+  left:52%;
   margin:-100px 0 0 -100px;
 }
 
@@ -55,12 +55,19 @@ span.psw {
 }
 
 /* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 900px) {
+  .border {
+  border: 3px solid rgb(30, 67, 167);
+  border-radius: 10px;
+  width:500px;
+  height: 400px;
+  position:absolute;
+  top:30%;
+  left:35%;
+  margin:-100px 0 0 -100px;
+  }
   span.psw {
      display: block;
      float: none;
-  }
-  .cancelbtn {
-     width: 100%;
   }
 }

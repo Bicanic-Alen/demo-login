@@ -8,6 +8,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signUpRouter = require('./routes/signin');
 var forgotPassRouter = require('./routes/forgot_password')
+var changeForgotPassRouter = require('./routes/changeForgotPass')
 
 var app = express();
 
@@ -22,5 +23,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signUpRouter);
 app.use('/forgotPassword',forgotPassRouter);
+app.use('/changeForgotPassword', changeForgotPassRouter)
 
 module.exports = app;

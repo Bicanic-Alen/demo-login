@@ -8,16 +8,20 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
   loginUtente(email: string, psw : string) {
-    const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/users/${email}/${psw}`;
+    const url = `https://3000-moccasin-worm-f302k0y4.ws-eu03.gitpod.io/users/${email}/${psw}`;
     return this.http.get(url);
   }
 
   signup(nome: string, cognome :string, email: string, psw: string){
-    const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`;
+    const url = `https://3000-moccasin-worm-f302k0y4.ws-eu03.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`;
     return this.http.get(url);
   }
   forgotPsw( email: string, cod : string){
-    const url = `https://3000-orange-lobster-h7jzyqjw.ws-eu03.gitpod.io/forgotPassword/${email}/${cod}`;
+    const url = `https://3000-moccasin-worm-f302k0y4.ws-eu03.gitpod.io/forgotPassword/${email}/${cod}`;
+    return this.http.get(url);
+  }
+  changeForgotPsw( email: string, cod :string, psw: string){
+    const url = `https://3000-moccasin-worm-f302k0y4.ws-eu03.gitpod.io/changeForgotPassword/${email}/${cod}/${psw}`;
     return this.http.get(url);
   }
 }
