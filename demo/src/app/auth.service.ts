@@ -24,4 +24,8 @@ export class AuthService {
     const url = `https://3000-moccasin-worm-f302k0y4.ws-eu03.gitpod.io/changeForgotPassword/${email}/${cod}/${psw}`;
     return this.http.get(url);
   }
+  changePsw(email: string, oldpsw : string, newpsw : string){
+    const url = `https://3000-moccasin-worm-f302k0y4.ws-eu03.gitpod.io/change/${email}/${oldpsw}/${newpsw}`;
+    return this.http.get(url);
+  }
 }

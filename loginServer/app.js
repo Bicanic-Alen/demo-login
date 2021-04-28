@@ -7,8 +7,9 @@ var cors = require('cors')
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var signUpRouter = require('./routes/signin');
-var forgotPassRouter = require('./routes/forgot_password')
-var changeForgotPassRouter = require('./routes/changeForgotPass')
+var forgotPassRouter = require('./routes/forgot_password');
+var changeForgotPassRouter = require('./routes/changeForgotPass');
+var changeRouter = require('./routes/change');
 
 var app = express();
 
@@ -23,6 +24,6 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/signup', signUpRouter);
 app.use('/forgotPassword',forgotPassRouter);
-app.use('/changeForgotPassword', changeForgotPassRouter)
-
+app.use('/changeForgotPassword', changeForgotPassRouter);
+app.use('/change', changeRouter);
 module.exports = app;
