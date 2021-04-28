@@ -19,7 +19,7 @@ router.get("/:email/:oldPsw/:newPsw", function (req, res){
            
         if (result.length != 0){ 
             var query = {'email': email};
-            var newvalues = {$set: {"password": pass}};
+            var newvalues = {$set: {"password": newPsw}};
             dbo.collection("utente").updateOne(query, newvalues, function(err, res) {
             if (err) throw err;
             r = "password modificata con successo";

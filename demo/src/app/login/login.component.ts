@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
+import { RecoverpassService } from '../recoverpass.service';
 
 @Component({
   selector: 'app-login',
@@ -17,7 +18,7 @@ export class LoginComponent implements OnInit {
   isAuthorized: boolean;
 
 
-  constructor(private auth : AuthService, private router: Router, private user : UserService) {
+  constructor(private auth : AuthService, private router: Router, private user : UserService, private recover : RecoverpassService) {
    }
 
   submit(email :HTMLInputElement, pass : HTMLInputElement){
@@ -25,6 +26,9 @@ export class LoginComponent implements OnInit {
     this.pass = pass.value;
     this.obsLogin = this.auth.loginUtente(this.email, this.pass);
     this.obsLogin.subscribe(this.getData);
+
+    this.recover.newEmail(this.email);
+
   }
 
   getData = (data)=>{

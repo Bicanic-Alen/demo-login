@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { RecoverpassService } from '../recoverpass.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-change-forgot-password',
@@ -8,6 +9,12 @@ import { RecoverpassService } from '../recoverpass.service';
   styleUrls: ['./change-forgot-password.component.css']
 })
 export class ChangeForgotPasswordComponent implements OnInit {
+  codiceSicurezza : string;
+  newPassword : string;
+  confirmPassword : string;
+  obschange : Observable<object>;
+  email : string;
+  results : any;
 
   constructor(private auth: AuthService, private recover : RecoverpassService) { }
 
@@ -20,12 +27,9 @@ export class ChangeForgotPasswordComponent implements OnInit {
     this.newPassword = newPsw.value;
     this.confirmPassword = confirmPsw.value;
     if (this.newPassword == this.confirmPassword){
-      this.obschange = this.auth.changePsw(this.email, this.oldPassword,this.confirmPassword);
+      this.obschange = this.auth.changeForgotPsw(this.email, this.codiceSicurezza ,this.confirmPassword);
       this.obschange.subscribe(this.getData);
     }
-
-
-
   }
 
   getData = (data)=>{
