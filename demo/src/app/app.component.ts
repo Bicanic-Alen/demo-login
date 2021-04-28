@@ -7,4 +7,19 @@ import { Component, Input } from '@angular/core';
 })
 export class AppComponent {
   title = 'demo';
+  openMenu : string = "close";
+  menuicon : string = "close";
+
+  menu()
+  {
+    if (this.openMenu == "close")
+    {
+      this.openMenu = "open";
+      this.menuicon = "close";
+    }else
+    {
+      this.openMenu = "close";
+      this.menuicon = "menu";
+    }
+  }
 }
