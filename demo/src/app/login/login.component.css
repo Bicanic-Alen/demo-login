@@ -54,19 +54,3 @@ button:hover {
   text-decoration: none;
 }
 
-/* Change styles for span and cancel button on extra small screens */
-
-@media screen and (max-width: 900px) {
-  .border {
-  border: 3px solid rgb(30, 67, 167);
-  border-radius: 10px;
-  width:400px;
-  height: 300px;
-  position:absolute;
-  top:40%;
-  left:40%;
-  margin:-100px 0 0 -100px;
-}
-
-}
-

@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { ChangeForgotPasswordComponent } from './change-forgot-password/change-forgot-password.component';
+import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
+import { AssistenzaComponent } from './assistenza/assistenza.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,9 @@ import { ChangeForgotPasswordComponent } from './change-forgot-password/change-f
     HomeComponent,
     ForgotPasswordComponent,
     ChangePasswordComponent,
-    ChangeForgotPasswordComponent
+    ChangeForgotPasswordComponent,
+    ChiSiamoComponent,
+    AssistenzaComponent
   ],
   imports: [
     BrowserModule,

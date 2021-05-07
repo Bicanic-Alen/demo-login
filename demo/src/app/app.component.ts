@@ -6,7 +6,7 @@ import { Component, Input } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'demo';
+  title = 'Learn&Travel';
   openMenu : string = "close";
   menuicon : string = "close";
 
