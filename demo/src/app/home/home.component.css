@@ -1,0 +1,46 @@
+
+
+
+.map-container {
+  width: auto;
+  height: 600px;
+  margin-left: 10px;
+  margin-top: 10vh;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.geocoder {
+  position: absolute;
+  z-index: 1;
+  width: 50%;
+  left: 50%;
+  margin-left: -25%;
+  top: 10px;
+}
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+#map {
+    margin-top: 75px;
+}
+p{
+  text-align: justify;
+}
+
+.infomation{
+  border-radius: 10px;
+  background-color: #F3E8EE;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  padding: 10px;
+  justify-content: center;
+}
+
+.imgContainer
+{
+  text-align: center;
+}
+
+

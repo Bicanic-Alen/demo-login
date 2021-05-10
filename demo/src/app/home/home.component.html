@@ -1,8 +1,23 @@
-<div *ngIf = "!results">
-  <p>Benvenuti su questo sito!!</p>
+<div>
+<div>
+<div id="map" class="map-container"></div>
+<div id="geocoder" class="geocoder"></div>
 </div>
-<div *ngIf = "results">
-<p>Benvenuto {{results.nome}} {{results.cognome}}</p>
+
+
+<div class = "infomation" *ngIf = "results.text">
+    <p><span>{{results.text}}</span>, <span >{{resPlace.Stato}}</span></p>
+</div>
+<div class = "infomation" *ngIf = "results.text">
+    <p>{{resPlace.Descrizione}}</p>
+</div>
+<div class = "infomation" *ngIf = "results.text">
+    <div class="imgContainer">
+      <img src="{{resPlace.Immagine}}" alt="immagine" width="30%" height="30%">
+    </div>
+
+
+</div>
 </div>
 
 
