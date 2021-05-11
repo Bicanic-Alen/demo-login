@@ -45,6 +45,7 @@ button:hover {
   width: 60%;
   padding: 16px;
   background-color: #98e2c6;
+  border-radius: 10px;
 }
 
 .psw {
