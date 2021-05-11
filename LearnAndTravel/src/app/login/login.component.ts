@@ -22,20 +22,21 @@ export class LoginComponent implements OnInit {
   constructor(private auth : AuthService, private router: Router, private user : UserService, private recover : RecoverpassService) {
    }
 
+    //invia i dati al server con utente e password
   submit(email :HTMLInputElement, pass : HTMLInputElement){
     this.email = email.value;
     this.pass = Md5.init(pass.value);
     this.obsLogin = this.auth.loginUtente(this.email, this.pass);
+    //riceve i dati dal server
     this.obsLogin.subscribe(this.getData);
-
     this.recover.newEmail(this.email);
 
   }
 
   getData = (data)=>{
     this.results = data[0];
+    //riempio il servezio user con object del risultato preso dal server
     this.user.newUser(this.results);
-    console.log(this.results)
   }
 
   ngOnInit(): void {

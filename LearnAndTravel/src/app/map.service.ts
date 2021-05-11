@@ -48,7 +48,6 @@ export class MapService {
     //restituisce il json della ricerca
     this.geocoder.on('result', (ev) => {
       var styleSpec = ev.result;
-      console.log(styleSpec);
       this.dataSubject.next(styleSpec);
     });
 

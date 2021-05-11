@@ -27,14 +27,12 @@ export class RegisterComponent implements OnInit {
     this.pass = Md5.init(pass.value);
     this.nome = nome.value;
     this.cognome = cognome.value;
-    console.log(this.pass);
     this.obsReg = this.auth.signup(this.nome, this.cognome,this.email, this.pass);
     this.obsReg.subscribe(this.getData);
   }
 
   getData = (data)=>{
     this.results = data[0];
-    console.log(this.results);
   }
 
   ngOnInit(): void {

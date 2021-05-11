@@ -33,7 +33,6 @@ export class ForgotPasswordComponent implements OnInit {
 
   getData = (data)=>{
     this.results = data[0];
-    console.log(this.results);
   }
 
   ngOnInit(): void {

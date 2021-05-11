@@ -36,7 +36,7 @@ export class HomeComponent implements OnInit {
     this.x = this.results.bbox[0];
     this.y1 = this.results.bbox[3];
     this.x1 = this.results.bbox[2];
-    console.log(this.y, this.x, this.y1, this.x1);
+
 
     this.obs = this.place.searchPlace(this.y, this.x, this.y1, this.x1); //richiamare dati dal server
     this.obs.subscribe(this.getDataServer);
