@@ -1,9 +1,8 @@
 <div class="container">
   <ul class="sidenav {{openMenu}}">
     <button (click)="menu()" class="material-icons">menuicon</button>
-    <li><div class="img">
-
-    </div></li>
+    <li><div class="img"></div></li>
+    <li *ngIf = "results"> <p> Bentornato {{results.nome}}</p></li>
     <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
     <li><a routerLink="/chi_siamo" routerLinkActive="active">Chi siamo</a></li>
     <li><a routerLink="/assistenza" routerLinkActive="active">Assistenza</a></li>

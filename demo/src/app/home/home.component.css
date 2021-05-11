@@ -10,14 +10,14 @@
   border-radius: 10px;
 }
 
-.geocoder {
-  position: absolute;
-  z-index: 1;
-  width: 50%;
-  left: 50%;
-  margin-left: -25%;
-  top: 10px;
+.map-box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+
 .mapboxgl-ctrl-geocoder {
     min-width: 100%;
 }

@@ -1,14 +1,23 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Learn&Travel';
   openMenu : string = "close";
   menuicon : string = "close";
+  results :  any = undefined;
+  constructor(private user : UserService){}
+
+ ngOnInit(){
+   this.user.shareduserInfo.subscribe(message => this.results = message)
+
+ }
+
 
   menu()
   {
@@ -22,4 +31,8 @@ export class AppComponent {
       this.menuicon = "menu";
     }
   }
+
+
+
+
 }
