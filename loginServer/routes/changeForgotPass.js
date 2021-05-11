@@ -12,7 +12,7 @@ var transporter = nodemailer.createTransport({
 
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = 'mongodb+srv://alen_bicanic:KPgZbP7MWt061Quk@cluster1.8ojbw.mongodb.net/Cluster1?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://Lorenzo:casada11@learnandtravel.qzfpb.mongodb.net/LearnAndTravel?retryWrites=true&w=majority'
 
 
 router.get("/:email/:cod/:password", function (req, res){
@@ -21,7 +21,7 @@ router.get("/:email/:cod/:password", function (req, res){
     pass = req.params.password;
     MongoClient.connect(uri, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("leartravel");
+        var dbo = db.db("LearnAndTravel");
         dbo.collection("changePass").find({$and:[{"email":email}, {"codiceSicurezza": codice}]}).toArray(function(err, results) {
             if (err) throw err;
             this.result = results;
@@ -29,7 +29,7 @@ router.get("/:email/:cod/:password", function (req, res){
         if (result.length != 0){ 
             var query = {'email': email};
             var newvalues = {$set: {"password": pass}};
-            dbo.collection("utente").updateOne(query, newvalues, function(err, res) {
+            dbo.collection("Users").updateOne(query, newvalues, function(err, res) {
             if (err) throw err;
             r = "password modificata con successo";
             console.log(r)

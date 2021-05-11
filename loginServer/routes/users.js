@@ -3,7 +3,7 @@ var router = express.Router();
 
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = 'mongodb+srv://alen_bicanic:KPgZbP7MWt061Quk@cluster1.8ojbw.mongodb.net/Cluster1?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://Lorenzo:casada11@learnandtravel.qzfpb.mongodb.net/LearnAndTravel?retryWrites=true&w=majority'
 
 /* GET users listing. */
 router.get('/:mail/:pass', function (req, res, next) {
@@ -17,7 +17,7 @@ router.get('/:mail/:pass', function (req, res, next) {
         function foundUser(err){
             if (err) console.log("connesione al db non riuscita");
             else{
-                const collection = client.db("leartravel").collection("utente");
+                const collection = client.db("LearnAndTravel").collection("Users");
                 collection.find({$and:[{'email':e},{"password":p}]}).toArray(callBackQuery);
             }
 

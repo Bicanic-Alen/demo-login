@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { RecoverpassService } from '../recoverpass.service';
 import { Observable } from 'rxjs';
+import { Md5 } from 'md5-typescript';
 
 @Component({
   selector: 'app-change-forgot-password',
@@ -24,8 +25,8 @@ export class ChangeForgotPasswordComponent implements OnInit {
 
   submit(codS : HTMLInputElement, newPsw:HTMLInputElement, confirmPsw : HTMLInputElement){
     this.codiceSicurezza = codS.value;
-    this.newPassword = newPsw.value;
-    this.confirmPassword = confirmPsw.value;
+    this.newPassword = Md5.init(newPsw.value);
+    this.confirmPassword = Md5.init(confirmPsw.value);
     if (this.newPassword == this.confirmPassword){
       this.obschange = this.auth.changeForgotPsw(this.email, this.codiceSicurezza ,this.confirmPassword);
       this.obschange.subscribe(this.getData);

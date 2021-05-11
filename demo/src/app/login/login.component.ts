@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { RecoverpassService } from '../recoverpass.service';
+import {Md5} from "md5-typescript";
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
 
   submit(email :HTMLInputElement, pass : HTMLInputElement){
     this.email = email.value;
-    this.pass = pass.value;
+    this.pass = Md5.init(pass.value);
     this.obsLogin = this.auth.loginUtente(this.email, this.pass);
     this.obsLogin.subscribe(this.getData);
 

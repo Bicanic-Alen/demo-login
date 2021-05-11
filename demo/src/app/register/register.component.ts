@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { Observable } from 'rxjs';
+import {Md5} from "md5-typescript";
 
 @Component({
   selector: 'app-register',
@@ -23,9 +24,10 @@ export class RegisterComponent implements OnInit {
   }
   submit(nome: HTMLInputElement, cognome: HTMLInputElement, email :HTMLInputElement, pass : HTMLInputElement){
     this.email = email.value;
-    this.pass = pass.value;
+    this.pass = Md5.init(pass.value);
     this.nome = nome.value;
     this.cognome = cognome.value;
+    console.log(this.pass);
     this.obsReg = this.auth.signup(this.nome, this.cognome,this.email, this.pass);
     this.obsReg.subscribe(this.getData);
   }

@@ -3,6 +3,7 @@ import { AuthService } from '../auth.service';
 import { Observable } from 'rxjs';
 import { RecoverpassService } from '../recoverpass.service';
 
+
 @Component({
   selector: 'app-forgot-password',
   templateUrl: './forgot-password.component.html',
@@ -12,6 +13,7 @@ export class ForgotPasswordComponent implements OnInit {
   email : string;
   t : string[] = [];
   cod :string;
+  codCrypted : string;
   results :any;
   obsForgot : Observable<object>;
 
@@ -24,7 +26,6 @@ export class ForgotPasswordComponent implements OnInit {
       this.t.push(pop.charAt(Math.floor(Math.random() * pop.length)));
     }
     this.cod = this.t.join('');
-    console.log(this.cod);
     this.obsForgot = this.auth.forgotPsw(this.email, this.cod);
     this.obsForgot.subscribe(this.getData);
     this.recover.newEmail(this.email);

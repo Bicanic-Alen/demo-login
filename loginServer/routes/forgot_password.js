@@ -5,14 +5,14 @@ var nodemailer = require('nodemailer');
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: 'learnandtravelservice@gmail.com',
+    user: 'learnandtravelcostomerservice@gmail.com',
     pass: 'xxx123##'
   }
 });
 
 const MongoClient = require('mongodb').MongoClient;
 
-const uri = 'mongodb+srv://alen_bicanic:KPgZbP7MWt061Quk@cluster1.8ojbw.mongodb.net/Cluster1?retryWrites=true&w=majority'
+const uri = 'mongodb+srv://Lorenzo:casada11@learnandtravel.qzfpb.mongodb.net/LearnAndTravel?retryWrites=true&w=majority'
 
 var codiceSicurezza;
 
@@ -73,8 +73,8 @@ router.get("/:email/:cod", function (req, res){
     codiceSicurezza = req.params.cod;
     MongoClient.connect(uri, function(err, db) {
         if (err) throw err;
-        var dbo = db.db("leartravel");
-        dbo.collection("utente").find({"email":email}).toArray(function(err, results) {
+        var dbo = db.db("LearnAndTravel");
+        dbo.collection("Users").find({"email":email}).toArray(function(err, results) {
             if (err) throw err;
             this.result = results;
            
@@ -90,7 +90,7 @@ router.get("/:email/:cod", function (req, res){
             var reg = {"info" : true}
             res.send(reg);
             var mailOptions = {
-            from: 'learnandtravelservice@gmail.com',
+            from: 'learnandtravelcostomerservice@gmail.com',
             to: `${email}`,
             subject: 'Richiesta di recupero password',
             html: `<h1> Learn&Travel</h1> <p>Gentile cliente ${results[0].nome} ${results[0].cognome},</p><p> il suo codice di sicurezza è: <b>${codiceSicurezza}</b></p>`
