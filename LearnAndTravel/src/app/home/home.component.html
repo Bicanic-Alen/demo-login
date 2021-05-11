@@ -1,0 +1,24 @@
+<div>
+  <div class="map-box">
+    <div id="geocoder" class="geocoder"></div>
+  </div>
+  <div>
+    <div id="map" class="map-container"></div>
+  </div>
+
+
+  <div class = "infomation" *ngIf = "results">
+    <p><span>{{results.text}}</span>,<span >{{resPlace.Stato}}</span></p>
+  </div>
+  <div class = "infomation" *ngIf = "results">
+    <p>{{resPlace.Descrizione}}</p>
+  </div>
+  <div class = "infomation" *ngIf = "results">
+    <div class="imgContainer">
+      <img src="{{resPlace.Immagine}}" alt="immagine" width="30%" height="30%">
+    </div>
+  </div>
+</div>
+
+
+

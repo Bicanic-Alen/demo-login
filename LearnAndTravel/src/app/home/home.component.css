@@ -1,0 +1,45 @@
+
+
+
+.map-container {
+  width: auto;
+  height: 600px;
+  margin-left: 10px;
+  margin-top: 5vh;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.map-box
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+}
+#map {
+    margin-top: 15px;
+}
+p{
+  text-align: justify;
+}
+
+.infomation{
+  border-radius: 10px;
+  background-color: #F3E8EE;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  padding: 10px;
+  justify-content: center;
+}
+
+.imgContainer
+{
+  text-align: center;
+}
+
+
