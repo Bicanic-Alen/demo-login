@@ -6,8 +6,9 @@
   justify-content: center;
   align-items: center;
 }
-
-
+.txt-red{
+  text-decoration-color: red;
+}
 input[type=text], input[type=password] , input[type=email] {
 
   width: 100%;

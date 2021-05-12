@@ -5,9 +5,13 @@
     <input type="email" placeholder="Enter email" name="uname" required  #email>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required #pass>
+    <input type="password" placeholder="Enter Password" name="psw" (keydown.enter)="submit(email, pass)" required #pass>
 
-    <button type="submit" (click)="submit(email, pass)" routerLink="/home" routerLinkActive="active">Login</button>
+    <div *ngIf = "pswErr">
+      <p>{{pswErr}}</p>
+    </div>
+
+    <button type="submit" (click)="submit(email, pass)">Login</button>
     <button type="button" class="signinbtn" routerLink="/signup" routerLinkActive="active">Sign Up</button>
     <a class="psw"  routerLink="/forgotPassword" routerLinkActive="active">Forgot password?</a>
   </div>

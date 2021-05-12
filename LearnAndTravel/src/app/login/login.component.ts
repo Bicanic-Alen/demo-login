@@ -15,8 +15,9 @@ export class LoginComponent implements OnInit {
   email:string;
   pass:string;
   obsLogin: Observable<Object>;
-  results: any;
+  results: any = undefined;
   isAuthorized: boolean;
+  pswErr : string;
 
 
   constructor(private auth : AuthService, private router: Router, private user : UserService, private recover : RecoverpassService) {
@@ -36,11 +37,18 @@ export class LoginComponent implements OnInit {
   getData = (data)=>{
     this.results = data[0];
     //riempio il servezio user con object del risultato preso dal server
-    this.user.newUser(this.results);
+    if (this.results != undefined){
+      this.user.newUser(this.results);
+      this.router.navigate(['/home']);
+    }
+    else{
+      this.pswErr = "password o nome utente errato";
+    }
+
   }
 
   ngOnInit(): void {
-    this.user.shareduserInfo.subscribe(message => this.results = message)
+    this.user.shareduserInfo.subscribe(message => this.results = message);
     if (this.results != undefined)
     {
       this.isAuthorized = true;
