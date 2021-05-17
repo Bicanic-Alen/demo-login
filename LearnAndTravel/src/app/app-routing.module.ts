@@ -8,10 +8,12 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ChangeForgotPasswordComponent } from './change-forgot-password/change-forgot-password.component';
 import { AssistenzaComponent } from './assistenza/assistenza.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
+import { HometwoComponent } from './hometwo/hometwo.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component : HomeComponent},
+  { path: 'home', component : HometwoComponent},
+  { path: 'map-search', component : HomeComponent},
   { path: 'login', component : LoginComponent},
   { path: 'signup', component : RegisterComponent},
   { path: 'forgotPassword', component : ForgotPasswordComponent},

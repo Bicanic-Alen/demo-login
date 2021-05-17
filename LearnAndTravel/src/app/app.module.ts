@@ -12,6 +12,7 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ChangeForgotPasswordComponent } from './change-forgot-password/change-forgot-password.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { AssistenzaComponent } from './assistenza/assistenza.component';
+import { HometwoComponent } from './hometwo/hometwo.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AssistenzaComponent } from './assistenza/assistenza.component';
     ChangePasswordComponent,
     ChangeForgotPasswordComponent,
     ChiSiamoComponent,
-    AssistenzaComponent
+    AssistenzaComponent,
+    HometwoComponent
   ],
   imports: [
     BrowserModule,

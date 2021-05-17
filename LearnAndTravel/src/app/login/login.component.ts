@@ -39,7 +39,7 @@ export class LoginComponent implements OnInit {
     //riempio il servezio user con object del risultato preso dal server
     if (this.results != undefined){
       this.user.newUser(this.results);
-      this.router.navigate(['/home']);
+      this.router.navigate(['/map-search']);
     }
     else{
       this.pswErr = "password o nome utente errato";
