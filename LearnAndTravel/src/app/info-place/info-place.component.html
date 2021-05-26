@@ -1,5 +1,8 @@
 <div *ngIf = "!loading">
-<p>loading...</p>
+  <div class = 'center'>
+    <img src="https://dati.salutepiemonte.it/im/loader.gif" alt="" height="15%" width="15%">
+  </div>
+
 </div>
 <div *ngIf = "loading">
     <div class = "infomation" >
@@ -8,6 +11,10 @@
   </div>
   <div class = "infomation" >
     <p>{{resPlace.Descrizione}}</p>
+  </div>
+  <div class = "infomation" >
+    <button (click)="back()">Torna indietro</button>
+
   </div>
 </div>
 

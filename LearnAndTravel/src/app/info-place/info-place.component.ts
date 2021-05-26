@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, ParamMap } from '@angular/router';
+import {Location} from '@angular/common'
 import { MapinfoService } from '../mapinfo.service';
 import { Observable } from 'rxjs';
 import { PlaceService } from '../place.service';
@@ -24,7 +26,7 @@ export class InfoPlaceComponent implements OnInit {
   resPlace: any;
   loading = false;
 
-  constructor(private mapInfo : MapinfoService, private place : PlaceService) { }
+  constructor(private mapInfo : MapinfoService, private place : PlaceService, private location: Location) { }
 
   ngOnInit(): void {
     this.mapInfo.sharedmapInfo.subscribe(message => this.results = message)
@@ -39,7 +41,7 @@ export class InfoPlaceComponent implements OnInit {
   }
   getDataServer = (data) => {
     this.resPlace = data[0];
-
+    this.imageslist = [];
     this.imageslist = new Array<Images>();
     for (const i of this.resPlace.Immagine) {
       this.imageslist.push(new Images (i, i, this.resPlace.Città, ""));
@@ -48,6 +50,10 @@ export class InfoPlaceComponent implements OnInit {
 
   }
 
+  back() : void
+  {
+    this.location.back();
+  }
 
 
 }

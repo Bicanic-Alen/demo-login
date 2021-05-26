@@ -2,6 +2,13 @@ p{
   text-align: justify;
 }
 
+.center{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .infomation{
   border-radius: 10px;
   background-color: #F3E8EE;
@@ -18,7 +25,7 @@ p{
 }
 
 button {
-  background-color: #264653;
+  background-color: #3C7A89;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -26,11 +33,14 @@ button {
   cursor: pointer;
   width: 100%;
 }
+button:hover {
+  opacity: 0.8;
+}
+
 
 .signinbtn {
   width: auto;
   margin-right: 5px;
   padding: 10px 18px;
-  background-color: #264653;
+  background-color: #3C7A89;
 }
-
