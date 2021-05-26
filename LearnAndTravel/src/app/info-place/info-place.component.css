@@ -1,0 +1,36 @@
+p{
+  text-align: justify;
+}
+
+.infomation{
+  border-radius: 10px;
+  background-color: #F3E8EE;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  padding: 10px;
+  justify-content: center;
+}
+
+.imgContainer
+{
+  text-align: center;
+}
+
+button {
+  background-color: #264653;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.signinbtn {
+  width: auto;
+  margin-right: 5px;
+  padding: 10px 18px;
+  background-color: #264653;
+}
+

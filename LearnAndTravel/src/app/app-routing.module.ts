@@ -9,6 +9,7 @@ import { ChangeForgotPasswordComponent } from './change-forgot-password/change-f
 import { AssistenzaComponent } from './assistenza/assistenza.component';
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { HometwoComponent } from './hometwo/hometwo.component';
+import { InfoPlaceComponent } from './info-place/info-place.component';
 
 const routes: Routes = [
   { path: '',   redirectTo: '/home', pathMatch: 'full' },
@@ -20,7 +21,8 @@ const routes: Routes = [
   { path: 'changePassword', component : ChangePasswordComponent},
   { path: 'changeForg', component: ChangeForgotPasswordComponent},
   { path: 'assistenza', component: AssistenzaComponent},
-  { path: 'chi_siamo', component: ChiSiamoComponent}
+  { path: 'chi_siamo', component: ChiSiamoComponent},
+  { path: 'infoplace', component: InfoPlaceComponent}
 ];
 
 @NgModule({

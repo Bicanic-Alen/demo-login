@@ -9,14 +9,7 @@
   <div *ngIf = "results">
     <div class = "infomation" >
       <p><span>{{results.place_name}}</span></p>
-    </div>
-    <div class = "infomation" >
-      <p>{{resPlace.Descrizione}}</p>
-    </div>
-    <div class = "infomation" >
-      <div class="imgContainer">
-        <img src="{{resPlace.Immagine}}" alt="immagine" width="30%" height="30%">
-      </div>
+      <button class = "signinbtn" routerLink="/infoplace" routerLinkActive="active"> vedi informazioni</button>
     </div>
   </div>
 </div>

@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgImageSliderModule } from 'ng-image-slider';
 
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
@@ -13,6 +14,7 @@ import { ChangeForgotPasswordComponent } from './change-forgot-password/change-f
 import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { AssistenzaComponent } from './assistenza/assistenza.component';
 import { HometwoComponent } from './hometwo/hometwo.component';
+import { InfoPlaceComponent } from './info-place/info-place.component';
 
 @NgModule({
   declarations: [
@@ -25,12 +27,14 @@ import { HometwoComponent } from './hometwo/hometwo.component';
     ChangeForgotPasswordComponent,
     ChiSiamoComponent,
     AssistenzaComponent,
-    HometwoComponent
+    HometwoComponent,
+    InfoPlaceComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    NgImageSliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,0 +1,13 @@
+<div *ngIf = "!loading">
+<p>loading...</p>
+</div>
+<div *ngIf = "loading">
+    <div class = "infomation" >
+    <ng-image-slider [images]="imageslist" #nav></ng-image-slider>
+
+  </div>
+  <div class = "infomation" >
+    <p>{{resPlace.Descrizione}}</p>
+  </div>
+</div>
+
