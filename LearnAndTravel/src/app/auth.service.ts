@@ -8,24 +8,24 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
   loginUtente(email: string, psw : string) {
-    const url = `https://3000-indigo-bat-5tm0rwgx.ws-eu07.gitpod.io/users/${email}/${psw}`;
+    const url = `https://3000-maroon-sheep-jlmhi7wa.ws-eu07.gitpod.io/users/${email}/${psw}`;
     return this.http.get(url);
   }
 
   signup(nome: string, cognome :string, email: string, psw: string){
-    const url = `https://3000-indigo-bat-5tm0rwgx.ws-eu07.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`;
+    const url = `https://3000-maroon-sheep-jlmhi7wa.ws-eu07.gitpod.io/signup/${nome}/${cognome}/${email}/${psw}`;
     return this.http.get(url);
   }
   forgotPsw( email: string, cod : string){
-    const url = `https://3000-indigo-bat-5tm0rwgx.ws-eu07.gitpod.io/forgotPassword/${email}/${cod}`;
+    const url = `https://3000-maroon-sheep-jlmhi7wa.ws-eu07.gitpod.io/forgotPassword/${email}/${cod}`;
     return this.http.get(url);
   }
   changeForgotPsw( email: string, cod :string, psw: string){
-    const url = `https://3000-indigo-bat-5tm0rwgx.ws-eu07.gitpod.io/changeForgotPassword/${email}/${cod}/${psw}`;
+    const url = `https://3000-maroon-sheep-jlmhi7wa.ws-eu07.gitpod.io/changeForgotPassword/${email}/${cod}/${psw}`;
     return this.http.get(url);
   }
   changePsw(email: string, oldpsw : string, newpsw : string){
-    const url = `https://3000-indigo-bat-5tm0rwgx.ws-eu07.gitpod.io/change/${email}/${oldpsw}/${newpsw}`;
+    const url = `https://3000-maroon-sheep-jlmhi7wa.ws-eu07.gitpod.io/change/${email}/${oldpsw}/${newpsw}`;
     return this.http.get(url);
   }
 }

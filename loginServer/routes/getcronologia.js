@@ -10,7 +10,7 @@ router.get("/:mail", function (req, res){
     MongoClient.connect(uri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("LearnAndTravel");
-        dbo.collection("Users").find({"email":email}).toArray(function(err, results) {
+        dbo.collection("DataHistoryUsers").find({"email":email}).toArray(function(err, results) {
             if (err) throw err;
             res.send(results)
             db.close();

@@ -6,22 +6,25 @@ const MongoClient = require('mongodb').MongoClient;
 
 const uri = 'mongodb+srv://Lorenzo:casada11@learnandtravel.qzfpb.mongodb.net/LearnAndTravel?retryWrites=true&w=majority'
 
-router.get("/:email/:nome/:y/:y1/:x/:x1", function (req, res){
-    email = req.params.mail;
+router.get("/:email/:nome/:yMin/:xMin/:yMax/:xMax", function (req, res){
+    email = req.params.email;
     nome = req.params.nome;
-    y = req.params.y;
-    y1 = req.params.y1;
-    x = req.params.x;
-    x1 = req.params.x1;
+    yMin = req.params.yMin;
+    xMin = req.params.xMin;
+    yMax = req.params.yMax;
+    xMax = req.params.xMax;
+
+    yMinFloat = parseFloat(yMin);
+    xMinFloat = parseFloat(xMin);
+    yMaxFloat = parseFloat(yMax);
+    xMaxFloat = parseFloat(xMax);
     MongoClient.connect(uri, function(err, db) {
         if (err) throw err;
         var dbo = db.db("LearnAndTravel");
-            var myobj = {"email" : email,"citta": nome, "y" : y, "y1": y1, "x": x, "x1" : x1 };
-            dbo.collection("DataHistoryUsers").insertOne(myobj, function(err, res) {
+            var myobj = {"email" : email,"citta": nome, "yMin" : yMinFloat, "xMin": xMinFloat, "yMax": yMaxFloat, "xMax" : xMaxFloat };
+            dbo.collection("DataHistoryUsers").insertOne(myobj, function(err, results) {
             if (err) throw err;
-            this.result = results;
-            result = "added one element to history";
-            console.log(result);
+            res.send(results)
             });
 
         db.close();

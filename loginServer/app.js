@@ -10,11 +10,12 @@ var signUpRouter = require('./routes/signin');
 var forgotPassRouter = require('./routes/forgot_password');
 var changeForgotPassRouter = require('./routes/changeForgotPass');
 var changeRouter = require('./routes/change');
-var uploadcronologia = require('.router/uploadcronologia');
-var getcronologia = require('./router/getcronologia')
+var uploadcronologia = require('./routes/uploadcronologia');
+var getcronologia = require('./routes/getcronologia')
 
 
 var app = express();
+
 
 app.use(logger('dev'));
 app.use(express.json());

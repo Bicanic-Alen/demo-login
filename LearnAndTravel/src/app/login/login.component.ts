@@ -5,6 +5,7 @@ import { Router } from '@angular/router';
 import { UserService } from '../user.service';
 import { RecoverpassService } from '../recoverpass.service';
 import {Md5} from "md5-typescript";
+import { HistoryUserService } from '../history-user.service';
 
 @Component({
   selector: 'app-login',
@@ -18,9 +19,11 @@ export class LoginComponent implements OnInit {
   results: any = undefined;
   isAuthorized: boolean;
   pswErr : string;
+  obsCrono : Observable<object>;
+  resultCrono : any;
 
 
-  constructor(private auth : AuthService, private router: Router, private user : UserService, private recover : RecoverpassService) {
+  constructor(private auth : AuthService, private crono : HistoryUserService,private router: Router, private user : UserService, private recover : RecoverpassService) {
    }
 
     //invia i dati al server con utente e password
@@ -40,6 +43,8 @@ export class LoginComponent implements OnInit {
     if (this.results != undefined){
       this.user.newUser(this.results);
       this.router.navigate(['/map-search']);
+      this.obsCrono = this.crono.getH(this.email);
+      this.obsCrono.subscribe(this.getDataCrono);
     }
     else{
       this.pswErr = "password o nome utente errato";
@@ -54,6 +59,12 @@ export class LoginComponent implements OnInit {
       this.isAuthorized = true;
     }
 
+  }
+
+  getDataCrono = (cronologia) =>
+  {
+    this.resultCrono = cronologia;
+    console.log(this.resultCrono);
   }
 
 

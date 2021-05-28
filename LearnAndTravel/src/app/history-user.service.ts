@@ -7,13 +7,13 @@ import { HttpHeaders, HttpClient } from '@angular/common/http';
 export class HistoryUserService {
 
   constructor(private http: HttpClient) { }
-  getH(email: string, psw : string) {
-    const url = `https://3000-indigo-bat-5tm0rwgx.ws-eu07.gitpod.io/getcronologia/${email}`;
+  getH(email: string) {
+    const url = `https://3000-maroon-sheep-jlmhi7wa.ws-eu07.gitpod.io/getcronologia/${email}`;
     return this.http.get(url);
   }
 
-  addH(nome: string, cognome :string, email: string, psw: string){
-    const url = `https://3000-indigo-bat-5tm0rwgx.ws-eu07.gitpod.io/uploadcronologia/${nome}/${cognome}/${email}/${psw}`;
+  addH(email : string, nome : string, y: any, x: any, y1 :any, x1: any){
+    const url = `https://3000-maroon-sheep-jlmhi7wa.ws-eu07.gitpod.io/uploadcronologia/${email}/${nome}/${y}/${x}/${y1}/${x1}`;
     return this.http.get(url);
   }
 }
