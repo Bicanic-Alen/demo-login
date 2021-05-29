@@ -11,7 +11,8 @@ var forgotPassRouter = require('./routes/forgot_password');
 var changeForgotPassRouter = require('./routes/changeForgotPass');
 var changeRouter = require('./routes/change');
 var uploadcronologia = require('./routes/uploadcronologia');
-var getcronologia = require('./routes/getcronologia')
+var getcronologia = require('./routes/getcronologia');
+var deletecronologia = require('./routes/deletecronologia');
 
 
 var app = express();
@@ -32,4 +33,5 @@ app.use('/changeForgotPassword', changeForgotPassRouter);
 app.use('/change', changeRouter);
 app.use('/getcronologia', getcronologia);
 app.use('/uploadcronologia', uploadcronologia);
+app.use('/deletecronologia',deletecronologia);
 module.exports = app;

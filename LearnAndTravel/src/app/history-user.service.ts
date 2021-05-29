@@ -16,4 +16,9 @@ export class HistoryUserService {
     const url = `https://3000-blush-stoat-h0aqmedf.ws-eu08.gitpod.io/uploadcronologia/${email}/${nome}/${y}/${x}/${y1}/${x1}`;
     return this.http.get(url);
   }
+
+  delH(email : string){
+    const url = `https://3000-blush-stoat-h0aqmedf.ws-eu08.gitpod.io/deletecronologia/${email}`;
+    return this.http.get(url);
+  }
 }
