@@ -6,6 +6,7 @@ import { UserService } from '../user.service';
 import { RecoverpassService } from '../recoverpass.service';
 import {Md5} from "md5-typescript";
 import { HistoryUserService } from '../history-user.service';
+import { SaveCronoService } from '../save-crono.service';
 
 @Component({
   selector: 'app-login',
@@ -23,7 +24,7 @@ export class LoginComponent implements OnInit {
   resultCrono : any;
 
 
-  constructor(private auth : AuthService, private crono : HistoryUserService,private router: Router, private user : UserService, private recover : RecoverpassService) {
+  constructor(private Scronologia: SaveCronoService,private auth : AuthService, private crono : HistoryUserService,private router: Router, private user : UserService, private recover : RecoverpassService) {
    }
 
     //invia i dati al server con utente e password
@@ -43,20 +44,9 @@ export class LoginComponent implements OnInit {
     if (this.results != undefined){
       this.user.newUser(this.results);
       this.router.navigate(['/map-search']);
-      this.obsCrono = this.crono.getH(this.email);
-      this.obsCrono.subscribe(this.getDataCrono);
     }
     else{
       this.pswErr = "password o nome utente errato";
-    }
-
-  }
-
-  ngOnInit(): void {
-    this.user.shareduserInfo.subscribe(message => this.results = message);
-    if (this.results != undefined)
-    {
-      this.isAuthorized = true;
     }
 
   }
@@ -65,7 +55,26 @@ export class LoginComponent implements OnInit {
   {
     this.resultCrono = cronologia;
     console.log(this.resultCrono);
+    this.Scronologia.uploadCronologia(this.resultCrono);
+
   }
+
+  ngOnInit(): void {
+    this.user.shareduserInfo.subscribe(message => this.results = message);
+    this.recover.sharedEmailInfo.subscribe(mail => this.email = mail);
+    this.obsCrono = this.crono.getH(this.email);
+    this.obsCrono.subscribe(this.getDataCrono);
+
+    if (this.results != undefined)
+    {
+      this.isAuthorized = true;
+
+    }
+
+
+  }
+
+
 
 
 

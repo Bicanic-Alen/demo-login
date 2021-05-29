@@ -9,7 +9,7 @@
   <div *ngIf = "results">
     <div class = "infomation" >
       <p><span>{{results.place_name}}</span>
-      <button class = "signinbtn" routerLink="/infoplace" routerLinkActive="active"> vedi informazioni</button>
+      <button class = "signinbtn" [routerLink]="['/infoplace', y, x, y1, x1]"> vedi informazioni</button>
       </p>
     </div>
   </div>

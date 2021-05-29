@@ -15,6 +15,7 @@ import { ChiSiamoComponent } from './chi-siamo/chi-siamo.component';
 import { AssistenzaComponent } from './assistenza/assistenza.component';
 import { HometwoComponent } from './hometwo/hometwo.component';
 import { InfoPlaceComponent } from './info-place/info-place.component';
+import { CronologiaComponent } from './cronologia/cronologia.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { InfoPlaceComponent } from './info-place/info-place.component';
     ChiSiamoComponent,
     AssistenzaComponent,
     HometwoComponent,
-    InfoPlaceComponent
+    InfoPlaceComponent,
+    CronologiaComponent
   ],
   imports: [
     BrowserModule,

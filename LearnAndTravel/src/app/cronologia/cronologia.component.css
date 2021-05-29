@@ -11,7 +11,17 @@ p{
 
 .infomation{
   border-radius: 10px;
-  background-color: #F3E8EE;
+  background-color: #3C7A89;
+  margin-left: 10px;
+  margin-bottom: 10px;
+  width: auto;
+  padding: 10px;
+  justify-content: center;
+}
+
+.content{
+  border-radius: 10px;
+  background-color: #98e2c6;
   margin-left: 10px;
   margin-bottom: 10px;
   width: auto;
@@ -23,6 +33,10 @@ p{
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+a{
+  color : white;
 }
 
 .imgContainer

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import {Location} from '@angular/common'
+import {Location} from '@angular/common';
 import { MapinfoService } from '../mapinfo.service';
 import { Observable } from 'rxjs';
 import { PlaceService } from '../place.service';
@@ -14,31 +14,47 @@ import { newArray } from '@angular/compiler/src/util';
 })
 export class InfoPlaceComponent implements OnInit {
   results : any;
-  text: any;
-  city: any;
   y : any;
   x : any;
   y1 : any;
   x1 : any;
   imageslist : Array<Images>;
+  routeObs: Observable<ParamMap>;
 
   obs: Observable<Object>;
   resPlace: any;
   loading = false;
 
-  constructor(private mapInfo : MapinfoService, private place : PlaceService, private location: Location) { }
+  constructor(private route: ActivatedRoute, private mapInfo : MapinfoService, private place : PlaceService, private location: Location) { }
 
   ngOnInit(): void {
-    this.mapInfo.sharedmapInfo.subscribe(message => this.results = message)
+    /*this.mapInfo.sharedmapInfo.subscribe(message => this.results = message)
+
     this.y = this.results.bbox[1];
     this.x = this.results.bbox[0];
     this.y1 = this.results.bbox[3];
     this.x1 = this.results.bbox[2];
+    */
+
+    this.routeObs = this.route.paramMap;
+    this.routeObs.subscribe(this.getRouterParam);
 
 
+  }
+
+  getRouterParam = (params: ParamMap) =>
+  {
+    this.y = params.get('yMin');
+    this.x = params.get('xMin');
+    this.y1 = params.get('yMax');
+    this.x1 = params.get('xMax');
+    console.log (this.y,this.x,this.y1,this.x1); //Stampo su console
+    //spotifyServiceObs va dichiarato
     this.obs = this.place.searchPlace(this.y, this.x, this.y1, this.x1); //richiamare dati dal server
     this.obs.subscribe(this.getDataServer);
   }
+
+
   getDataServer = (data) => {
     this.resPlace = data[0];
     this.imageslist = [];

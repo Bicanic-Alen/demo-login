@@ -1,3 +1,4 @@
+<div class = "content">
 <div *ngIf  = "!isAuthorized">
 <div class = "border">
   <div class="container">
@@ -34,12 +35,11 @@
   <button type= "button" class = "signinbtn" routerLink="/changePassword" routerLinkActive="active">modifica password</button>
   </div>
   <hr>
-  <div>
+  <div class ="crono">
     <h1>Cronologia</h1>
-    <ul *ngFor = "let Cronologia of resultCrono[0]"></ul>
-      <li>{{Cronologia.citta}}</li>
-    <div></div>
+    <button class = " signinbtn"  routerLink="/cronologia" routerLinkActive="active"> Visualizza cronologia</button>
   </div>
+</div>
 </div>
 
 
