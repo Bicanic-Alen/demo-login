@@ -8,17 +8,17 @@ export class HistoryUserService {
 
   constructor(private http: HttpClient) { }
   getH(email: string) {
-    const url = `https://heartbreaking-near-lake.glitch.me/getcronologia/${email}`;
+    const url = `https://learnandtravelserver.glitch.me/getcronologia/${email}`;
     return this.http.get(url);
   }
 
   addH(email : string, nome : string, y: any, x: any, y1 :any, x1: any){
-    const url = `https://heartbreaking-near-lake.glitch.me/uploadcronologia/${email}/${nome}/${y}/${x}/${y1}/${x1}`;
+    const url = `https://learnandtravelserver.glitch.me/uploadcronologia/${email}/${nome}/${y}/${x}/${y1}/${x1}`;
     return this.http.get(url);
   }
 
   delH(email : string){
-    const url = `https://3000-blush-stoat-h0aqmedf.ws-eu08.gitpod.io/deletecronologia/${email}`;
+    const url = `https://learnandtravelserver.glitch.me/deletecronologia/${email}`;
     return this.http.get(url);
   }
 }
