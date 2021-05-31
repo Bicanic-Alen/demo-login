@@ -1,0 +1,19 @@
+<div>
+  <div class="map-box">
+    <div id="geocoder" class="geocoder"></div>
+  </div>
+  <div>
+    <div id="map" class="map-container"></div>
+  </div>
+
+  <div *ngIf = "results">
+    <div class = "infomation" >
+      <p><span>{{results.place_name}}</span>
+      <button class = "signinbtn" [routerLink]="['/infoplace', y, x, y1, x1]"> vedi informazioni</button>
+      </p>
+    </div>
+  </div>
+</div>
+
+
+
