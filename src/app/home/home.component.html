@@ -5,7 +5,11 @@
   <div>
     <div id="map" class="map-container"></div>
   </div>
-
+  <div *ngIf ="flagStart">
+    <h4> 
+      Cerca la tua meta sulla nostra mappa e scopri la sua storia, e se vorrai prenota un viaggio per visitare il posto.
+    </h4>
+  </div>
   <div *ngIf = "results">
     <div class = "infomation" >
       <p><span>{{results.place_name}}</span>

@@ -13,7 +13,7 @@ import { RecoverpassService } from '../recoverpass.service';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-
+  flagStart : any;
   results: any;
   text: any;
   city: any;
@@ -31,13 +31,15 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.map.buildMap();
-
+    this.flagStart = true;
+    
     //riceve i dati dalla mappa
     this.subscription = this.map.getDataSubjectObs().subscribe(this.getMapSearchData);
     this.recover.sharedEmailInfo.subscribe(message => this.email = message)
   }
   getMapSearchData = (message) => {
     this.results = message;
+    this.flagStart = false;
     console.log(this.results);
     this.mapInfo.newData(this.results)
 

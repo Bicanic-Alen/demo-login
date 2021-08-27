@@ -13,7 +13,7 @@ import { InfoPlaceComponent } from './info-place/info-place.component';
 import { CronologiaComponent } from './cronologia/cronologia.component';
 
 const routes: Routes = [
-  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '',   redirectTo: '/map-search', pathMatch: 'full' },
   { path: 'home', component : HometwoComponent},
   { path: 'map-search', component : HomeComponent},
   { path: 'login', component : LoginComponent},

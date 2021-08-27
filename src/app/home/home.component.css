@@ -5,7 +5,7 @@
   margin-left: 10px;
   margin-top: 5vh;
   margin-bottom: 10px;
-  border-radius: 10px;
+  border-radius: 25px;
 }
 
 .map-box
@@ -27,7 +27,7 @@ p{
 }
 
 .infomation{
-  border-radius: 10px;
+  border-radius: 25px;
   background-color: #F3E8EE;
   margin-left: 10px;
   margin-bottom: 10px;
@@ -58,6 +58,7 @@ button {
   border: none;
   cursor: pointer;
   width: 100%;
+  border-radius: 50px;
 }
 button:hover {
   opacity: 0.8;
